@@ -1,5 +1,4 @@
 const video = document.querySelector('.video');
-const video2 = document.querySelector('.video2');
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('models'),
@@ -18,7 +17,7 @@ function startVideo() {
     }
   };
 
-  navigator.mediaDevices.getUserMedia({
+  navigator.getUserMedia({
       video: {},
     },
     stream => video.srcObject = stream,
