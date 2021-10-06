@@ -132,7 +132,7 @@ function takepicture() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM CONTENT LOADeed")
+    console.log("DOM CONTENT LOADeeeeeeeed")
     startup();
 
     document.querySelector(".btn").addEventListener("click", function() {
