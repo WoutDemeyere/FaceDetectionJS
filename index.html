@@ -116,7 +116,10 @@
             canvas.height = height;
             context.drawImage(video, 0, 0, width, height);
 
-            var data = canvas.toDataURL('image/jpeg');
+            var ctx = canvas.getContext("2d")
+
+            // var data = canvas.toDataURL('image/jpeg');
+            var data = ctx.getImageData(0, 0, width, height).data;
             // var request = new XMLHttpRequest();
             // console.log(data)
             // request.open("GET", '127.0.0.1/temi/api/analyze');
