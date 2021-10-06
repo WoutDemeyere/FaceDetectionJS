@@ -98,11 +98,15 @@ function clearphoto() {
 
 function onFaceDetection(json) {
     console.log("ON FACE DETECTION")
+
+    console.log(json)
+
+
     json = JSON.parse(json)
 
     
 
-    console.log(json)
+    
 
     var cont = document.querySelector(".c-face-container");
 
@@ -152,7 +156,7 @@ function takepicture() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM CONTENT LOEBOERD")
+    console.log("DOM CONTENT LOEBOERDDEEDEDE")
     startup();
 
     document.querySelector(".btn").addEventListener("click", function() {
