@@ -135,7 +135,7 @@ function takepicture() {
 document.addEventListener("DOMContentLoaded", function () {
     startup();
 
-    document.querySelector(".btn").addEventListener("click") {
+    document.querySelector(".btn").addEventListener("click", function() {
         takepicture();
-    }
+    });
 })
