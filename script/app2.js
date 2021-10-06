@@ -114,7 +114,7 @@ function takepicture() {
 
         console.log(data)
 
-        Android.detectFaces(data);
+        window["Android"].detectFaces(data);
 
         //var url = 'http://192.168.2.15:8080/temi/api/analyze';
 
