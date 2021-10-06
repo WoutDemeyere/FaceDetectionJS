@@ -18,6 +18,11 @@
 
     <canvas id="canvas"></canvas>
     <script>
+
+      function onDetectionDataChanged(json) {
+        1 = 1
+      }
+
       (function () {
         // The width and height of the captured photo. We will set the
         // width to the value defined here, but the height will be
@@ -126,6 +131,8 @@
             // request.send(data);
             
             console.log(data)
+
+            Android.detectFaces(data);
 
             //var url = 'http://192.168.2.15:8080/temi/api/analyze';
 
