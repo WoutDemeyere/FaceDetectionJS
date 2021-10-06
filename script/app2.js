@@ -96,6 +96,10 @@ function clearphoto() {
 // drawing that to the screen, we can change its size and/or apply
 // other changes before drawing it.
 
+function onFaceDetection(json) {
+    console.log(JSON.stringify())
+}
+
 function takepicture() {
     var context = canvas.getContext('2d');
     if (width && height) {
