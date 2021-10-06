@@ -114,7 +114,7 @@ function takepicture() {
 
         console.log(data)
 
-        window["Android"].detectFaces(data);
+        window.Android.detectFaces(data);
 
         //var url = 'http://192.168.2.15:8080/temi/api/analyze';
 
@@ -124,7 +124,6 @@ function takepicture() {
         // }).then(res => {
         //   console.log("Request complete! response:", res.json());
         // });
-
     } else {
         clearphoto();
     }
