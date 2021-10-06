@@ -23,7 +23,9 @@ function takepicture() {
         context.drawImage(video, 0, 0, width, height);
 
         var data = canvas.toDataURL('image/jpeg');
-        var request = new XMLHttpRequest();
+
+        console.log(data)
+        //var request = new XMLHttpRequest();
         //request.open("POST", 'SERVER_URL');
         //request.send(data);
     } else {
