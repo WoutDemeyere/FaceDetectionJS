@@ -10,8 +10,8 @@ function onDetectionStateChanged(json) {
 // width to the value defined here, but the height will be
 // calculated based on the aspect ratio of the input stream.
 
-var width = 600; // We will scale the photo width to this
-var height = 400; // This will be computed based on the input stream
+var width = 340; // We will scale the photo width to this
+var height = 300; // This will be computed based on the input stream
 
 // |streaming| indicates whether or not we're currently streaming
 // video from the camera. Obviously, we start at false.
@@ -97,18 +97,21 @@ function clearphoto() {
 // other changes before drawing it.
 
 function onFaceDetection(json) {
+    console.log("ON FACE DETECTION")
     json = JSON.parse(json)
+
+    
+
+    console.log(json)
+
+    var cont = document.querySelector(".c-face-container");
+
+    cont.innerHTML = '';
 
     for (var i = 0; i < json.length; i++) {
         console.log(json[i])
         cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`; 
     }
-
-    console.log("Age " + json)
-
-    var cont = document.querySelector(".c-face-container");
-
-    cont.innerHTML = '';
 
     
 }
@@ -129,7 +132,7 @@ function takepicture() {
         // request.open("GET", '127.0.0.1/temi/api/analyze');
         // request.send(data);
 
-        console.log(data)
+        //console.log(data)
 
         Android.detectFaces(data);
 
