@@ -102,20 +102,22 @@ function onFaceDetection(json) {
     console.log(json)
 
 
-    json = JSON.parse(json)
-
-    
-
+    //json = JSON.parse(json)
     
 
     var cont = document.querySelector(".c-face-container");
 
     cont.innerHTML = '';
 
-    for (var i = 0; i < json.length; i++) {
-        console.log(json[i])
-        cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`; 
+    if(json.length >= 1) {
+        for (var i = 0; i < json.length; i++) {
+            console.log(json[i])
+            cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`; 
+        }
+    } else {
+        cont.innerHTML += `<p class="faces">Face ${1}, Age: ${json[0]}</p>`; 
     }
+    
 
     
 }
