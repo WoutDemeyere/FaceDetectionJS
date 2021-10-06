@@ -7,9 +7,11 @@ function startVideo() {
         // }
     };
 
-    navigator.getUserMedia({
-            video: constraints,
-        },
+    navigator.getUserMedia(
+        //{
+            //video: constraints,
+        //}
+        //,
         stream => video.srcObject = stream,
         err => console.error(err)
     )
