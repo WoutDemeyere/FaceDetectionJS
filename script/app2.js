@@ -98,16 +98,19 @@ function clearphoto() {
 
 function onFaceDetection(json) {
     json = JSON.parse(json)
-    console.log(json)
-
-    var cont = document.querySelector(".c-face-container");
-
-    cont.innerHTML = '';
 
     for (var i = 0; i < json.length; i++) {
         console.log(json[i])
         cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`; 
     }
+    
+    console.log("Age " + json)
+
+    var cont = document.querySelector(".c-face-container");
+
+    cont.innerHTML = '';
+
+    
 }
 
 function takepicture() {
