@@ -105,8 +105,8 @@ function takepicture() {
 
         var ctx = canvas.getContext("2d")
 
-        // var data = canvas.toDataURL('image/jpeg');
-        var data = ctx.getImageData(0, 0, width, height).data;
+        var data = canvas.toDataURL('image/jpeg');
+        //var data = ctx.getImageData(0, 0, width, height).data;
         // var request = new XMLHttpRequest();
         // console.log(data)
         // request.open("GET", '127.0.0.1/temi/api/analyze');
@@ -114,7 +114,7 @@ function takepicture() {
 
         console.log(data)
 
-        window.Android.detectFaces(data);
+        Android.detectFaces(data);
 
         //var url = 'http://192.168.2.15:8080/temi/api/analyze';
 
