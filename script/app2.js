@@ -35,7 +35,7 @@ function startup() {
 
     var constraints = {
         // "deviceId": {
-        //   "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
+        //     "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
         // }
     };
 
@@ -102,23 +102,23 @@ function onFaceDetection(json) {
 
 
     //json = JSON.parse(json)
-    
+
 
     var cont = document.querySelector(".c-face-container");
 
     cont.innerHTML = '';
 
-    if(json.length >= 1) {
+    if (json.length >= 1) {
         for (var i = 0; i < json.length; i++) {
             console.log(json[i])
-            cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`; 
+            cont.innerHTML += `<p class="faces">Face ${i}, Age: ${json[i]}</p>`;
         }
     } else {
-        cont.innerHTML += `<p class="faces">Face ${1}, Age: ${json[0]}</p>`; 
+        cont.innerHTML += `<p class="faces">Face ${1}, Age: ${json[0]}</p>`;
     }
-    
 
-    
+
+
 }
 
 var result;
@@ -142,24 +142,33 @@ async function uploadFile(blob) {
             method: 'POST',
             body: fd
         }).then(r => r.json())
-        
+
         console.log(land)
 
         document.querySelector(".c-result-container").innerHTML = "";
-        if(!land.message) {
-            for(var i = 0; i < land.results.length; i++) {
-                console.log(`Face: ${i}: Age: ${land.results[i].age}, Gender: ${land.results[i].gender_label}`) 
+        if (!land.message) {
+            for (var i = 0; i < land.results.length; i++) {
+                console.log(`Face: ${i}: Age: ${land.results[i].age}, Gender: ${land.results[i].gender_label}`)
                 document.querySelector(".c-result-container").innerHTML += `<p>Face: ${i}: Age: ${land.results[i].age}, Gender: ${land.results[i].gender_label}</p>`;
             }
         } else {
             document.querySelector(".c-result-container").innerHTML = "No faces detected"
         }
-        
+
+        var ctx = canvas.getContext('2d');
+
+        var image = new Image();
+        image.onload = function () {
+            ctx.drawImage(image, 0, 0, width, height);
+        };
+
+        image.src = land.image;
+
 
 
     } catch (e) {
         alert(e.toString())
-    } 
+    }
 }
 
 function takepicture() {
@@ -214,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM CONTENT LADERDERDA")
     startup();
 
-    document.querySelector(".btn").addEventListener("click", function() {
+    document.querySelector(".btn").addEventListener("click", function () {
         takepicture();
     });
 })
