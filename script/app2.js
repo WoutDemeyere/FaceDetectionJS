@@ -220,7 +220,7 @@ function takepicture() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM CONTENT LADERDERDA")
+    console.log("DOM CONTENT LOEBERDIEDOE")
     startup();
 
     document.querySelector(".btn").addEventListener("click", function () {
