@@ -10,8 +10,8 @@ function onDetectionStateChanged(json) {
 // width to the value defined here, but the height will be
 // calculated based on the aspect ratio of the input stream.
 
-var width = 200; // We will scale the photo width to this
-var height = 200; // This will be computed based on the input stream
+var width = 400; // We will scale the photo width to this
+var height = 400; // This will be computed based on the input stream
 
 // |streaming| indicates whether or not we're currently streaming
 // video from the camera. Obviously, we start at false.
@@ -34,9 +34,9 @@ function startup() {
 
 
     var constraints = {
-        // "deviceId": {
-        //   "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
-        // }
+        "deviceId": {
+          "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
+        }
     };
 
     navigator.mediaDevices.getUserMedia({
@@ -62,8 +62,8 @@ function startup() {
                 height = width / (4 / 3);
             }
 
-            video.setAttribute('width', 800);
-            video.setAttribute('height', 800);
+            video.setAttribute('width', 400);
+            video.setAttribute('height', 400);
             canvas.setAttribute('width', width);
             canvas.setAttribute('height', height);
             streaming = true;
@@ -121,6 +121,8 @@ function onFaceDetection(json) {
     
 }
 
+var result;
+
 async function uploadFile(blob) {
     // if (uploading) {
     //     return
@@ -134,22 +136,30 @@ async function uploadFile(blob) {
         const fd = new FormData()
         fd.append('image', blob)
 
-        console.log(fd)
+        //console.log(blob)
 
         const land = await fetch(API_URL + '/api/v1/detect-gender-and-age', {
             method: 'POST',
             body: fd
         }).then(r => r.json())
-        if (land.message) {
-            throw new Error(land.message)
+        
+        console.log(land)
+
+        document.querySelector(".c-result-container").innerHTML = "";
+        if(!land.message) {
+            for(var i = 0; i < land.results.length; i++) {
+                console.log(`Face: ${i}: Age: ${land.results[i].age}, Gender: ${land.results[i].gender_label}`) 
+                document.querySelector(".c-result-container").innerHTML += `<p>Face: ${i}: Age: ${land.results[i].age}, Gender: ${land.results[i].gender_label}</p>`;
+            }
+        } else {
+            document.querySelector(".c-result-container").innerHTML = "No faces detected"
         }
-        result.src = land.image
+        
+
 
     } catch (e) {
         alert(e.toString())
-    } finally {
-        unLockUploading()
-    }
+    } 
 }
 
 function takepicture() {
