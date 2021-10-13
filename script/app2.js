@@ -35,9 +35,9 @@ function startup() {
 
     var constraints = {
 
-        // "deviceId": {
-        //   "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
-        // }
+        "deviceId": {
+          "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
+        }
     };
 
     navigator.mediaDevices.getUserMedia({
@@ -132,6 +132,8 @@ function takepicture() {
         var ctx = canvas.getContext("2d")
 
         var data = canvas.toDataURL('image/jpeg');
+
+        console.log(data);
         //var data = ctx.getImageData(0, 0, width, height).data;
         // var request = new XMLHttpRequest();
         // console.log(data)
