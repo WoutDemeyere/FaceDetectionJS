@@ -10,8 +10,8 @@ function onDetectionStateChanged(json) {
 // width to the value defined here, but the height will be
 // calculated based on the aspect ratio of the input stream.
 
-var width = 1080; // We will scale the photo width to this
-var height = 720; // This will be computed based on the input stream
+var width = 200; // We will scale the photo width to this
+var height = 200; // This will be computed based on the input stream
 
 // |streaming| indicates whether or not we're currently streaming
 // video from the camera. Obviously, we start at false.
@@ -63,8 +63,8 @@ function startup() {
                 height = width / (4 / 3);
             }
 
-            video.setAttribute('width', 1080);
-            video.setAttribute('height', 720);
+            video.setAttribute('width', 800);
+            video.setAttribute('height', 800);
             canvas.setAttribute('width', width);
             canvas.setAttribute('height', height);
             streaming = true;
