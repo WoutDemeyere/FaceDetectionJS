@@ -34,10 +34,9 @@ function startup() {
 
 
     var constraints = {
-
-        "deviceId": {
-          "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
-        }
+        // "deviceId": {
+        //   "exact": "6f20cb85aee4e0e5bc0434c16156cbd025b04fb6a58229089095e0eea9d84443"
+        // }
     };
 
     navigator.mediaDevices.getUserMedia({
