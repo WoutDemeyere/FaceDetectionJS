@@ -121,6 +121,37 @@ function onFaceDetection(json) {
     
 }
 
+async function uploadFile(blob) {
+    // if (uploading) {
+    //     return
+    // }
+
+    //lockUploading()
+
+    var API_URL = "http://49.12.227.132:5101";
+
+    try {
+        const fd = new FormData()
+        fd.append('image', blob)
+
+        console.log(fd)
+
+        const land = await fetch(API_URL + '/api/v1/detect-gender-and-age', {
+            method: 'POST',
+            body: fd
+        }).then(r => r.json())
+        if (land.message) {
+            throw new Error(land.message)
+        }
+        result.src = land.image
+
+    } catch (e) {
+        alert(e.toString())
+    } finally {
+        unLockUploading()
+    }
+}
+
 function takepicture() {
     var context = canvas.getContext('2d');
     if (width && height) {
@@ -128,11 +159,22 @@ function takepicture() {
         canvas.height = height;
         context.drawImage(video, 0, 0, width, height);
 
-        var ctx = canvas.getContext("2d")
+        const ctx = canvas.getContext('2d')
+        canvas.toBlob(uploadFile)
+
 
         var data = canvas.toDataURL('image/jpeg');
 
-        console.log(data);
+
+        // const fd = new FormData()
+        // fd.append('image', blob)
+
+        // const land = await fetch(API_URL + '/api/v1/detect-gender-and-age', {
+        //     method: 'POST',
+        //     body: fd
+        // }).then(r => r.json())
+
+        // console.log(data);
         //var data = ctx.getImageData(0, 0, width, height).data;
         // var request = new XMLHttpRequest();
         // console.log(data)
@@ -141,7 +183,7 @@ function takepicture() {
 
         //console.log(data)
 
-        Android.detectFaces(data);
+        //Android.detectFaces(data);
 
         //var url = 'http://192.168.2.15:8080/temi/api/analyze';
 
