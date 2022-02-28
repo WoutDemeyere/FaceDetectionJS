@@ -1,0 +1,63 @@
+.c-btn {
+    font-family: "SansaCon", Helvetica, arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    margin: 4px;
+    border: 1px;
+    border-radius: 2px;
+    display: inline-block;
+    border-radius: 2px;
+    width: 20%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #dbd9d9;
+}
+
+.c-btn:active {
+    font-family: "SansaCon", Helvetica, arial, sans-serif;
+    text-align: center;
+    font-size: 5%;
+    padding: 5px;
+    margin: 4px;
+    border: 1px;
+    border-radius: 2px;
+    display: inline-block;
+    border-radius: 2px;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    background-color: #969494;
+}
+
+.c-err {
+    font-size: 20px;
+    color: crimson;
+}
+
+.c-inf {
+    font-size: 20px;
+    color: rgb(38, 199, 17);
+}
+
+
+.c-input {
+    font-family: "SansaCon", Helvetica, arial, sans-serif;
+    text-align: center;
+    font-size: 5%;
+    padding: 5px;
+    margin: 4px;
+    border: 1px;
+    border-radius: 2px;
+    display: inline-block;
+    border-radius: 2px;
+    width: 15%;
+    border: 2px solid #4c90bd;
+    background-color: #dad2d2;
+}
+
+.c-main {
+    display: flex;
+    flex-wrap: wrap;
+}
