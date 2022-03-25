@@ -1,61 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- Meta data -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Temi test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" media="screen" href="style/screen.css" />
-
-
-
-    <!-- Script -->
-    <script src="script/script.js"></script>
-    
+  <script src="script/app2.js"></script>
 </head>
 
 <body>
-    <div class="c-main">
-        <input type="button" value="FORWARD" class="c-btn js-for"><br>
-        <input type="button" value="BACKWARD" class="c-btn js-back"><br>
-        <input type="button" value="TURN" class="c-btn js-turn"><br>
-        <input type="button" value="UP" class="c-btn js-up"><br>
-        <input type="button" value="DOWN" class="c-btn js-down"><br>
-        <input type="text" placeholder="Say Something" class="c-input js-text"><br>
-        <input type="button" value="SPEAK TEXT" class="c-btn js-send"><br>
-        <input type="button" value="GET LOCATIONS" class="c-btn js-get-loc"><br>
-        <input type="button" value="GET MAPS" class="c-btn js-get-map"><br>
-
-        <input type="text" placeholder="Give location" class="c-input js-loc"><br>
-        <input type="button" value="GO TO" class="c-btn js-send-loc"><br>
-        
-        <input type="button" value="TEST BUTTON" class="c-btn js-test"><br>
-        <input type="button" value="GET BATTERY" class="c-btn js-get-bat"><br>
-
-        <input type="button" value="SHOW TOP BAR" class="c-btn js-show-top"><br>
-        <input type="button" value="HIDE TOP BAR" class="c-btn js-hide-top"><br>
-
-        <input type="button" value="QUIT WEB" class="c-btn js-q-web"><br>
-        <input type="button" value="QUIT APP" class="c-btn js-q-app"><br>
-        <input type="button" value="KIOSK ON" class="c-btn js-kiosk-on"><br>
-        <input type="button" value="KIOSK OFF" class="c-btn js-kiosk-off"><br>
-        <input type="button" value="GET KIOSK MODE" class="c-btn js-kiosk-get"><br>
-        <input type="button" value="SHUTDOWN TEMI" class="c-btn js-shutdown"><br>
-        <input type="button" value="RESTART TEMI" class="c-btn js-restart"><br>
-        <input type="button" value="GET CPU TOTAL" class="c-btn js-cpu"><br>
-
-        <input type="button" value="RELOAD" class="c-btn js-ref"><br>
+  <div class="form-group">
+    <div class="camera">
+      <video id="video">Video stream not available.</video>
+      <button type="button" id="startbutton" class="btn btn-success" >Take photo</button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="c-face-container">
     </div>
 
-    <p class='js-err c-err'>error container</p>
-    <p class='js-inf c-inf'>info container</p>
-    <p class='js-bat c-inf'>battery level</p>
-
-
+    <!-- <div class="c-result-container">
+    </div> -->
     
 </body>
 
