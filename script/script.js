@@ -60,6 +60,10 @@ function onWakeupWord(word, angle) {
     console.log(`Wakeup word: ${word} at ${angle} deg`);
 }
 
+function onTelepresenceEventChanged(sessionID, type, status) {
+    console.log(`Call event id ${onTelepresenceEventChanged}: type ${type} status ${status} deg`);
+}
+
 /*  
     ------------  
     Functies die Javascript kan triggeren bij de android app
