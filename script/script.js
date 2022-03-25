@@ -183,6 +183,10 @@ function readButtons() {
     document.querySelector('.js-cpu').addEventListener("click", function () {
         Android.getCpuTotal();
     });
+
+    document.querySelector('.js-cont').addEventListener("click", function () {
+        Android.getContacts();
+    });
 }
 
 
