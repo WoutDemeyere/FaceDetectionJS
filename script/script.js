@@ -61,7 +61,13 @@ function onWakeupWord(word, angle) {
 }
 
 function onTelepresenceEventChanged(sessionID, type, status) {
+    console.log(type);
     console.log(`Call event: type ${type} status ${status} deg`);
+}
+
+function onConsoleMessage(level, message) {
+    document.querySelector('.js-err').innerHTML = level;
+    document.querySelector('.js-inf').innerHTML = message;
 }
 
 /*  
