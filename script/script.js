@@ -185,7 +185,8 @@ function readButtons() {
     });
 
     document.querySelector('.js-cont').addEventListener("click", function () {
-        Android.getContacts();
+        var obj = new JSONObject(Android.getContacts());
+        console.log(obj);
     });
 }
 
