@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <link rel="stylesheet" href="style/style_mic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="script/app2.js"></script>
 </head>
 
@@ -19,9 +22,21 @@
     <div class="c-face-container">
     </div>
 
+    <div class="bar" id="volume-visualizer"></div>
+    <div class="components">
+        <button class="techkib-online-tool-button" id="start">
+            <i class="fa fa-microphone"></i> Start The Test
+        </button>
+        <button class="techkib-online-tool-button" id="stop"><i class="fa fa-stop"></i> Stop</button>
+        <button class="techkib-online-tool-button" onClick="window.location.reload();">
+            <i class="fa fa-refresh"> </i> Reload Test Environment
+        </button>
+    </div>
+    <h3 id="tex"></h3>
+
     <!-- <div class="c-result-container">
     </div> -->
     
 </body>
-
+<script src="script/mic.js"></script>
 </html>
