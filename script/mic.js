@@ -32,7 +32,7 @@
             };
         }
         catch (e) {
-            console.error('Failed to initialize volume visualizer, simulating instead...', e);
+            console.error(e);
             let lastVolume = 50;
             volumeCallback = () => {
                 const volume = Math.min(Math.max(Math.random() * 100, 0.8 * lastVolume), 1.2 * lastVolume);
