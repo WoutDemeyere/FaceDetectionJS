@@ -41,7 +41,7 @@ function startup() {
 
     navigator.mediaDevices.getUserMedia({
             video: constraints,
-            audio: false
+            audio: true
         })
         .then(function (stream) {
             video.srcObject = stream;
