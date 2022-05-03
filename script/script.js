@@ -233,7 +233,7 @@ function getButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    window["Android"].tiltBy(0);
+    //window["Android"].tiltBy(0);
     getButtons();
     readButtons();
 })
