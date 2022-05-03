@@ -198,6 +198,11 @@ function readButtons() {
         var obj = new JSONObject(Android.getContacts());
         console.log(obj);
     });
+
+    document.querySelector('.js-adb-start').addEventListener("click", function () {
+        Android.startADB();
+        console.log(obj);
+    });
 }
 
 
