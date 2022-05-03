@@ -201,7 +201,7 @@ function readButtons() {
 
     document.querySelector('.js-adb-start').addEventListener("click", function () {
         Android.startADB();
-        console.log(obj);
+        console.log("Starting ADB ....")
     });
 }
 
